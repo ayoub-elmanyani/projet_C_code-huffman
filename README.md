@@ -11,18 +11,31 @@ III - Objectif :
 L’objectif de ce projet est d’implémenter en langage C le codage binaire préfixe d’un ensemble de n caractères avec leur respective fréquence d’apparition qui sera saisie par l’utilisateur du programme.
 
 IV - Description des fonctions implémentées :
+
 creer_node(char ,int ) : Cette fonction crée une feuille à partir du symbole et sa fréquence d'apparition passés en paramètre.
+
 inic_tas(int) : Cette fonction reçoit un entier avec lequel elle va allouer la mémoire  pour un Tas, en initialisant le nombre d’éléments courant à 0.
+
 est_vide_tas(tas * ) : Cette fonction renvoie 1 si le tas passé en paramètre est vide, 0 sinon .
+
 inserer_tas(tas *, node *) : Cette fonction insère un élément de type 'node *' dans le Tas qui sera un Tas minimum  en utilisant l’algorithme de tri croissant.
+
 saisie_alphabet () : Cette fonction demande à l'utilisateur le nombre de différents caractères d'une chaine , avec lequel elle va initialiser le Tas, et puis demander à l'utilisateur chaque caractère et sa fréquence d'apparition , et après les insérer dans ce Tas .
+
 supprimer_tas(tas * ) :  Cette fonction renvoie le premier élément du Tas et l'actualise , pour cela on enregistre le premier élément du tas contenant la basse fréquence, et puis on le remplace par le dernier élément, à l’aide de l’algorithme de tri croissant on le réorganise pour obtenir encore un Tas minimum, et finalement cette fonction retourne le premier élément enregistré.
+
 creer_arbre (tas * ) : Cette fonction renvoie l'arbre préfixe des éléments du Tas  en utilisant l’algorithme de la construction de l’arbre de codage donné en énoncé du mini-projet qui est basé sur le principe du codage de Huffman qui repose sur la création d'une structure d'arbre composée de nœuds. (Veuillez regarder le principe de Huffman en haut )
+
 est_feuille(node *) : Cette fonction renvoie 1 si l'arbre passé en paramètre est une feuille, 0 sinon .
+
 imprimer_arbre(node * ) : Cette fonction récursive affiche l'arbre dans l'ordre infixe , elle n’affiche pas les nœuds sans symboles.
+
 imprimer_tab(char * , int) : Cette fonction affiche le tableau enregistrant le code binaire d'un caractère.
+
 imprimer_codes(node * , char *, int ) : Cette fonction récursive affiche le code binaire des caractères entrés par l'utilisateur en faisant un parcours infixe de l’arbre passé en paramètre, pour cela on utilise une variable iZero qui égale à 0, si on visite le fils gauche on ajoute au tableau la valeur ‘0’ en position de iZero, et on appel récursivement la fonction avec le fils gauche et l’index iZero + 1 , on fait pareil si l’on visite le fils droit , mais au lieu de ‘0’  on met ‘1’ et l’index iZero +1. 
+
 supprimer_arbre(node ** ) : Cette fonction désalloue la mémoire allouée à l'arbre binaire, elle prend en paramètre l'adresse d'un arbre.
+
 liberer_memoire_tas(tas **) : Cette fonction désalloue la mémoire allouée au Tas, elle prend en paramètre l'adresse d'un Tas .
 
 V - Méthode d’exécution du programme :
